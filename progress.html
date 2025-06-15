@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Progress Tracker</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #e9f7ef; }
+        header { background: #145a32; color: white; padding: 20px; text-align: center; }
+        form { background: white; padding: 20px; border-radius: 10px; }
+        input, textarea { display: block; width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📈 Track Your Progress</h1>
+        <p>Log your milestones and personal wins</p>
+    </header>
+    <main>
+        <form>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="achievement">What did you accomplish today?</label>
+            <textarea id="achievement" name="achievement" rows="4"></textarea>
+
+            <button type="submit">Save Entry</button>
+        </form>
+    </main>
+</body>
+</html>
