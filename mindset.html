@@ -2,87 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mindset Boost | K-Fit Central</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindset Boost | K-Fit x Kuroverse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0d1a;
-      color: #f0e6ff;
-    }
-    header {
-      background: linear-gradient(90deg, #8a2be2, #00ffff, #ff00ff);
-      padding: 40px 20px;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #1f0036, #320046);
+      color: white;
       text-align: center;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #aaffec;
+    }
+    .section {
+      margin: 3rem auto;
+      max-width: 800px;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 0 10px #c77dff;
+    }
+    .boost {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      color: #f8f8f8;
+    }
+    button {
+      background: #aaffec;
+      color: #1f0036;
+      border: none;
+      padding: 1rem 2rem;
+      margin: 1rem 0;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #c77dff;
       color: white;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      text-shadow: 0 0 15px #ff00ff;
-    }
-    header p {
-      font-size: 1.2em;
-      color: #e0d0ff;
-    }
-    nav {
-      background-color: #1a1a33;
-      padding: 15px;
-      text-align: center;
-    }
-    nav a {
-      color: #00ffff;
-      margin: 0 20px;
-      text-decoration: none;
-      font-weight: bold;
-      text-shadow: 0 0 10px #00ffff;
-    }
-    main {
-      padding: 30px;
-    }
-    section {
-      background-color: #1a1a33;
-      border: 1px solid #8a2be2;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 0 15px #8a2be2;
-    }
-    section h2 {
-      color: #ff66ff;
-      text-shadow: 0 0 10px #ff00ff;
-    }
     footer {
-      background-color: #0d0d1a;
-      color: #ccccff;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      border-top: 1px solid #333;
+      margin-top: 4rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>K-Fit Central</h1>
-    <p>Fuel your body. Elevate your mind. Crush your goals.</p>
-  </header>
-  <nav>
-    <a href="index.html">Home</a>
-<a href="blog.html">Blog</a>
-<a href="mindset.html">Mindset Boost</a>
-<a href="tracker.html">Progress Tracker</a>
-<a href="challenges.html">Challenges</a>
-  </nav>
-  <main>
-    <section>
-      <h2>Mindset Boost</h2>
-      <p>Daily mindset resets, challenges to rewire your thinking, and affirmations to fuel your day.</p>
-    </section>
-  </main>
+  <h1 data-aos="fade-down">🧠 Mindset Boost</h1>
+  <h2 data-aos="fade-down" data-aos-delay="200">Mindset is Muscle. Train it Daily.</h2>
+
+  <div class="section" data-aos="fade-up">
+    <h2>⚡️ Daily Ritual Protocol</h2>
+    <p class="boost"><strong>Morning:</strong> “Today I lead. No waiting for motivation.”</p>
+    <p class="boost"><strong>Midday Reset:</strong> Breathe x3 + Say: “I create momentum.”</p>
+    <p class="boost"><strong>Night Review:</strong> Ask: “Did I act like the version I’m building?”</p>
+  </div>
+
+  <div class="section" data-aos="fade-up">
+    <h2>🧩 Mindset Decks</h2>
+    <p class="boost"><strong>Discipline:</strong> “Discipline is freedom on a delay.”</p>
+    <p class="boost"><strong>Identity:</strong> “I don’t try to win. I train to become.”</p>
+    <p class="boost"><strong>Resilience:</strong> “Pain = data. I adapt and reload.”</p>
+    <p class="boost"><strong>Flow:</strong> “Focus is a decision. I enter the zone on command.”</p>
+    <p class="boost"><strong>Vision:</strong> “My future is forged, not found.”</p>
+  </div>
+
+  <div class="section" data-aos="fade-up">
+    <h2>🎯 Affirmation Generator</h2>
+    <p id="affirmation" class="boost">Click the button to get a boost.</p>
+    <button onclick="newAffirmation()">Boost Me</button>
+  </div>
+
   <footer>
-    <p>© 2025 K-Fit Central. All rights reserved.</p>
+    <p><a href="index.html" style="color:#c77dff">← Back to Home</a></p>
+    <p>&copy; 2025 Cairo | K-Fit x Kuroverse</p>
   </footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const affirmations = [
+      "I show up when it's hard. That's what makes it count.",
+      "Every second is a rep. Every rep is a ritual.",
+      "The version I admire is one decision away.",
+      "Pressure turns Cairo into diamonds.",
+      "My mind obeys my mission, not my mood.",
+      "Even at 1%, I move forward.",
+      "I don’t chase discipline — I build it into code.",
+      "Mindset is weaponized when practiced."
+    ];
+    function newAffirmation() {
+      const index = Math.floor(Math.random() * affirmations.length);
+      document.getElementById("affirmation").innerText = affirmations[index];
+    }
+  </script>
 </body>
 </html>
+
+    
