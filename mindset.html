@@ -2,100 +2,279 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mindset Catalyst</title>
+  <title>Mindset Catalyst | Fuel the Mind, Forge the Body</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0e0e0e, #1c1c2b);
+      color: #f9f9f9;
       text-align: center;
-      padding: 2rem;
     }
-
+    header {
+      padding: 3rem 1rem 2rem;
+      animation: fadeInDown 1s ease-out;
+    }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin: 0;
       background: linear-gradient(90deg, #8e2de2, #4a00e0);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
     }
-
-    #quote-box {
-      max-width: 700px;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
-      transition: opacity 0.4s ease-in-out;
+    p.subtitle {
       font-size: 1.2rem;
-      line-height: 1.6;
-      min-height: 140px;
+      color: #ccc;
+      margin-top: 1rem;
+    }
+    #quote-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+      font-size: 1.3rem;
+      font-weight: 500;
+      min-height: 120px;
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: fadeIn 1s ease-out;
     }
-
-    #boost-btn {
-      margin-top: 2rem;
-      background: linear-gradient(90deg, #00c6ff, #0072ff);
+    button {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
       border: none;
       color: white;
       padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
       border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-bottom: 3rem;
+    }
+    button:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      transform: scale(1.05);
+    }
+    .section {
+      padding: 3rem 1rem;
+      background-color: #121212;
+      margin: 2rem 0;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      animation: fadeInUp 1s ease-out;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #ff8a00, #e52e71);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #bbb;
+      line-height: 1.6;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .tab {
+      background: #222;
+      margin: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 10px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
-
-    #boost-btn:hover {
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    .tab:hover {
+      background: #333;
     }
-
+    .tab-content {
+      display: none;
+      margin-top: 1rem;
+      color: #aaa;
+    }
+    .tab.active {
+      background: #444;
+      font-weight: bold;
+    }
+    .tab-content.active {
+      display: block;
+    }
     footer {
-      margin-top: 3rem;
+      margin: 4rem 0 2rem;
       font-size: 0.9rem;
-      color: #888;
+      color: #777;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Mindset Catalyst</h1>
+    <p class="subtitle">Mindset is Muscle. Fuel the Mind, Forge the Body.</p>
+    <button onclick="generateAffirmation()">Ignite Me</button>
+    <div id="quote-box">Click "Ignite Me" to generate a powerful mental rewire.</div>
+  </header>
 
-  <h1>Mindset Catalyst</h1>
-  <div id="quote-box">Click the button to activate your mindset.</div>
-  <button id="boost-btn">Ignite Me</button>
+  <div class="section">
+    <h2>Daily Protocol</h2>
+    <p><strong>Morning Ritual:</strong> Cold shower, breathwork, journaling<br>
+    <strong>Midday Reset:</strong> Walk + rehydration + 1 mindset boost<br>
+    <strong>Night Review:</strong> Reflect, wins/losses, visual rehearsal</p>
+  </div>
+
+  <div class="section">
+    <h2>Boost Decks</h2>
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('discipline')">Discipline</div>
+      <div class="tab" onclick="showTab('identity')">Identity</div>
+      <div class="tab" onclick="showTab('resilience')">Resilience</div>
+      <div class="tab" onclick="showTab('flow')">Flow</div>
+      <div class="tab" onclick="showTab('vision')">Vision</div>
+    </div>
+    <div id="discipline" class="tab-content active">Act beyond feeling. Build self-command through repetition.</div>
+    <div id="identity" class="tab-content">Become the version you train for. Your choices shape your character.</div>
+    <div id="resilience" class="tab-content">Adapt through stress. Harden through challenge, not retreat.</div>
+    <div id="flow" class="tab-content">Find peace in performance. Let effort and instinct merge.</div>
+    <div id="vision" class="tab-content">See who you're becoming. The future is shaped by present intent.</div>
+  </div>
+
+  <div class="section">
+    <h2>The Iron Philosophy</h2>
+    <p>Every rep is a metaphor. Resistance in the gym mirrors resistance in life. The barbell becomes the truth-teller—exposing weakness, building grit, forging character. Embrace the struggle, for it sculpts your spirit as much as your physique.</p>
+  </div>
 
   <footer>
-    © 2025 K-Fit | Fuel the Mind. Forge the Body.
+    <a href="/">Return to Home</a> | <a href="/blog">Blog</a> | <a href="/projects">Projects</a><br>
+    © 2025 K-Fit | Fuel the Mind, Forge the Body.
   </footer>
 
   <script>
-    let affirmations = [];
+    const affirmations = [
+    "Discipline is remembering what you want most, not what you want now.",
+    "Strength does not come from the body. It comes from the will.",
+    "You don't rise to the level of your goals; you fall to the level of your systems.",
+    "Progress is built on consistency, not motivation.",
+    "What you do every day matters more than what you do once in a while.",
+    "Each drop of sweat writes a line in your story.",
+    "The best project you’ll ever work on is yourself.",
+    "Growth begins where comfort ends.",
+    "Excuses are lies the mind tells when the body forgets its purpose.",
+    "Don’t wait for the mood. Train the mind to move."
+    "He who conquers himself is the mightiest warrior. — Confucius",
+    "The body achieves what the mind believes.",
+    "You are what you repeatedly do. Excellence is a habit. — Aristotle",
+    "To enjoy the things we ought and to hate the things we ought has the greatest bearing on excellence. — Aristotle",
+    "Suffering is the true test of character. — Seneca",
+    "Do not pray for an easy life. Pray for the strength to endure a difficult one. — Bruce Lee",
+    "What stands in the way becomes the way. — Marcus Aurelius",
+    "The flame that burns twice as bright burns half as long. Train smart.",
+    "To be calm is the highest achievement of the self. — Zen Proverb",
+    "A river cuts through rock, not by power, but by persistence.",
+    "Fall seven times, stand up eight. — Japanese Proverb",
+    "The wound is where the light enters you. — Rumi",
+    "Pain is inevitable. Suffering is optional. — Haruki Murakami",
+    "Every setback is a setup for a comeback.",
+    "Storms make roots dig deeper.",
+    "Rock bottom builds the strongest foundations.",
+    "A smooth sea never made a skilled sailor.",
+    "The obstacle is not in the way. It is the way.",
+    "Adapt. Overcome. Rebuild. Repeat.",
+    "No challenge, no change. No change, no growth.",
+    "You already have what it takes; you just have to remember where you left it.",
+    "The mirror reflects your effort, not your excuses.",
+    "Become the person your goals require.",
+    "Energy flows where intention goes.",
+    "The only competition is who you were yesterday.",
+    "Your habits are your destiny.",
+    "You don't find time. You make time.",
+    "The hardest lift is lifting yourself out of bed.",
+    "You are one workout away from a better mood.",
+    "Show up. Show up again. Then again.",
+    "If it’s endurable, then endure it. Stop complaining. — Marcus Aurelius",
+    "Freedom is the ability to say no to your impulses.",
+    "Waste no more time arguing what a good person should be. Be one. — Marcus Aurelius",
+    "Sometimes the slow route is the strongest one.",
+    "Stillness is not weakness. It’s where power gathers.",
+    "Train the body. Calm the mind.",
+    "You can’t control the outcome, but you can control the effort.",
+    "Master your emotions or they will master you.",
+    "A warrior of the mind knows when to rest.",
+    "To move with grace, one must first learn stillness.",
+    "Muscles are earned, not given.",
+    "Every rep is a vote for your future self.",
+    "Fitness is not punishment. It’s a celebration of movement.",
+    "Your body adapts. Your mind resists. Conquer both.",
+    "Fuel your body like it’s the only one you’ll ever own — because it is.",
+    "The pain you feel today is strength you’ll wear tomorrow.",
+    "Don’t train to be better than someone else. Train to be unstoppable.",
+    "Rest when you’re done, not when you’re tired.",
+    "Every drop of sweat is a promise kept.",
+    "Consistency is the true pre-workout.",
+    "Train for life, not just for looks.",
+    "Movement is medicine.",
+    "Build habits that build you back.",
+    "Your health is your wealth.",
+    "You don’t need permission to change.",
+    "You are the author of your energy.",
+    "Health isn’t a destination. It’s a lifestyle.",
+    "Strong mind, strong body, strong life.",
+    "Train with purpose. Live with discipline.",
+    "Make your lifestyle harder so life gets easier.",
+    "Focus is a muscle — train it.",
+    "Presence is power.",
+    "The body follows the breath.",
+    "What you focus on expands.",
+    "Distraction is the enemy of greatness.",
+    "Every moment is a rep in the mind gym.",
+    "Slowness smooths, and smoothness speeds.",
+    "Intensity is nothing without intention.",
+    "Small focus. Big change.",
+    "Be here now — the rest will follow.",
+     "Build the life you don’t need a vacation from.",
+    "Think legacy, not likes.",
+    "Play the long game. Outlast the noise.",
+    "Make moves today that your future self will thank you for.",
+    "Brick by brick becomes a fortress.",
+    "Don’t count the days — make the days count. — Muhammad Ali",
+    "Every choice writes your future.",
+    "Greatness is not a moment. It’s a decision repeated.",
+    "Train like your future depends on it — because it does.",
+    "Live like you mean it. Lift like you believe it."
+    ];
 
-    async function loadQuotes() {
-      const res = await fetch('mindset_affirmations.json');
-      affirmations = await res.json();
+    function generateAffirmation() {
+      const quoteBox = document.getElementById('quote-box');
+      const randomQuote = affirmations[Math.floor(Math.random() * affirmations.length)];
+      quoteBox.textContent = randomQuote;
     }
 
-    function showRandomQuote() {
-      if (affirmations.length === 0) return;
-      const quoteBox = document.getElementById("quote-box");
-      const quote = affirmations[Math.floor(Math.random() * affirmations.length)];
-      quoteBox.style.opacity = 0;
-      setTimeout(() => {
-        quoteBox.textContent = quote;
-        quoteBox.style.opacity = 1;
-      }, 300);
+    function showTab(id) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
     }
-
-    document.getElementById("boost-btn").addEventListener("click", showRandomQuote);
-    loadQuotes();
   </script>
 </body>
 </html>
